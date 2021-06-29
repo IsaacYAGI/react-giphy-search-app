@@ -1,4 +1,4 @@
-import { React, useState, useEffect } from 'react';
+import { React } from 'react';
 
 export default function GifDetail({title, id, url, directUrl, rating}){
     
@@ -7,9 +7,9 @@ export default function GifDetail({title, id, url, directUrl, rating}){
             Detail gif
             <div>Id: {id}</div>
             <div>Title: {title}</div>
-            <div>DirectUrl: <a href={directUrl} target="_blank">{directUrl}</a></div>
+            <div>DirectUrl: <a href={directUrl} target="_blank" rel="noreferrer">{directUrl}</a></div>
             <div>Rating: {rating}</div>
-            <img src={url}/>
+            <img src={url} alt={title}/>
         </div>
     )
 }
