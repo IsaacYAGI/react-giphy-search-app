@@ -8,7 +8,7 @@ export async function GetGifById(id = ""){
             const response = await (await fetch(apiURL)).json();
             const {data} = response || {data: []};
             console.log("DATA:",data)
-          if (data === undefined || data.title == undefined) return null
+          if (data === undefined || data.title === undefined) return null
             
                 const {images, title, id, rating, embed_url: directUrl} = data;
                 const {url} = images.downsized_medium;
