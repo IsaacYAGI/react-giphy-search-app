@@ -17,7 +17,7 @@ export default function GifDetailPage({params}){
             console.log(gif)
         });
         
-    }, [])
+    }, [id])
     
 
     if (loading) return <span>Cargando...</span>
