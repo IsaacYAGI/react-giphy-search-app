@@ -14,7 +14,7 @@ export default function ApikeyManager(){
     return (
         <>
         <input placeholder="Insert Apikey..." value={apikey} onChange={(event) => setApikey(event.target.value)}></input>
-        <button onClick={()=> localStorage.setItem("giphy_apikey", apikey)}>{apikey != "" ? "Change" : "Add"} Apikey</button>
+        <button onClick={()=> localStorage.setItem("giphy_apikey", apikey)}>{apikey !== "" ? "Change" : "Add"} Apikey</button>
         </>
     )
 }
