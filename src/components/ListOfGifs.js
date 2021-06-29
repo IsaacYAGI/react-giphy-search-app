@@ -1,7 +1,7 @@
 import { React, useState, useEffect } from 'react';
 
 import Gif from './Gif';
-import getGifs from '../services/getGifs';
+import { GetGifs } from '../services/getGifs';
 
 
 export default function ListOfGifs({params}){
@@ -11,7 +11,7 @@ export default function ListOfGifs({params}){
 
     useEffect(()=>{
         setLoading(true);
-        getGifs({keyword: keyword}).then(gifs => {
+        GetGifs({keyword: keyword}).then(gifs => {
             setLoading(false);
             setGifs(gifs)
         });

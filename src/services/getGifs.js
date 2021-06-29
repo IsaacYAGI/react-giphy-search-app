@@ -1,6 +1,6 @@
 const apikey = localStorage.getItem("giphy_apikey") || "";
 
-export default async function getGifs({keyword = "morty"} = {}){
+export async function GetGifs({keyword = "morty"} = {}){
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${keyword}&limit=5&offset=0&rating=g&lang=en`;
     try {
         if (apikey !== ""){
