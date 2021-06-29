@@ -4,19 +4,24 @@ import Gif from './Gif';
 import getGifs from '../services/getGifs';
 
 
-export default function ListOfGifs({keyword}){
-     
+export default function ListOfGifs({params}){
+     const {keyword} = params;
     const [gifs, setGifs] = useState([]);
 
     useEffect(()=>{
         getGifs({keyword: keyword}).then(gifs => setGifs(gifs));
         
     }, [keyword])
-    return gifs.map(({id, title, url}) => <Gif 
-            key={id}
-            title={title} 
-            id={id} 
-            url={url}/>
-        )   
+    return <div>
+        {
+
+            gifs.map(({id, title, url}) => <Gif 
+                key={id}
+                title={title} 
+                id={id} 
+                url={url}/>
+            )   
+        }
+    </div>
       
 }
