@@ -7,7 +7,7 @@ Una pequeña app de prueba hecha en react para la búsqueda de gifs usando el AP
 - Correr `npm install` 
 - Una vez instalada las dependencias, correr `npm start`
 - Crear un API Key de Giphy desde su [página para desarrolladores](https://developers.giphy.com/)
-- Al visualizar la app, se muestra un input donde se debe colocar el API Key de Giphy, pegarlo allí, presionar "change Apikey" y recargar la aplicación. El Apikey es guardado en el localstorage del navegador.
+- Al visualizar la app, se muestra un input donde se debe colocar el API Key de Giphy, pegarlo allí y listo. El Apikey es guardado en el localstorage del navegador.
 
 ## Descripción de la app
 
