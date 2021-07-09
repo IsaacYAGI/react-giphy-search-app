@@ -1,9 +1,8 @@
-
-
 export async function GetGifById(id = "", Apikey){
-    // const { Apikey } = useContext(ApikeyContext)
+
+    //Para usar el apikey desde el .env usar esto
     // const Apikey = process.env.REACT_APP_APIKEY;
-    console.log(Apikey);
+    // console.log(Apikey);
 
     const apiURL = `https://api.giphy.com/v1/gifs/${id}?api_key=${Apikey}`;
     try {

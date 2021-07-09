@@ -1,10 +1,9 @@
-// import { useContext } from 'react';
-// import { ApikeyContext } from '../contexts/ApikeyManagerContext';
-
-
 export async function GetGifs({keyword = "morty"} = {}, Apikey){
     
     // const { Apikey } = useContext(ApikeyContext)
+    //Para usar el apikey desde el .env usar esto
+    // const Apikey = process.env.REACT_APP_APIKEY;
+
     console.log(Apikey);
 
     const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${Apikey}&q=${keyword}&limit=5&offset=0&rating=g&lang=en`;
