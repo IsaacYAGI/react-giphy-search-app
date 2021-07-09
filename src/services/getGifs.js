@@ -1,9 +1,15 @@
-const apikey = localStorage.getItem("giphy_apikey") || "";
+// import { useContext } from 'react';
+// import { ApikeyContext } from '../contexts/ApikeyManagerContext';
 
-export async function GetGifs({keyword = "morty"} = {}){
-    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${apikey}&q=${keyword}&limit=5&offset=0&rating=g&lang=en`;
+
+export async function GetGifs({keyword = "morty"} = {}, Apikey){
+    
+    // const { Apikey } = useContext(ApikeyContext)
+    console.log(Apikey);
+
+    const apiURL = `https://api.giphy.com/v1/gifs/search?api_key=${Apikey}&q=${keyword}&limit=5&offset=0&rating=g&lang=en`;
     try {
-        if (apikey !== ""){
+        if (Apikey !== ""){
 
             const response = await (await fetch(apiURL)).json();
             const {data} = response || {data: []};

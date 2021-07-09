@@ -1,9 +1,11 @@
-const apikey = localStorage.getItem("giphy_apikey") || "";
+
 
 export async function GetGifById(id = ""){
-    const apiURL = `https://api.giphy.com/v1/gifs/${id}?api_key=${apikey}`;
+    // const { Apikey } = useContext(ApikeyContext)
+    const Apikey = process.env.REACT_APP_APIKEY;
+    const apiURL = `https://api.giphy.com/v1/gifs/${id}?api_key=${Apikey}`;
     try {
-        if (apikey !== ""){
+        if (Apikey !== ""){
 
             const response = await (await fetch(apiURL)).json();
             const {data} = response || {data: []};

@@ -1,7 +1,9 @@
-import { React, useState, useEffect } from 'react';
+import { React, useState, useEffect, useContext } from 'react';
+import { ApikeyContext } from '../contexts/ApikeyManagerContext';
 
 export default function ApikeyManager(){
-    const [apikey, setApikey] = useState(localStorage.getItem("giphy_apikey") || "")
+    const { Apikey, setApikey } = useContext(ApikeyContext)
+    // const [apikey, setApikey] = useState(localStorage.getItem("giphy_apikey") || "")
     
     useEffect(()=>{
         // setLoading(true);
@@ -10,11 +12,11 @@ export default function ApikeyManager(){
         //     setGifs(gifs)
         // });
         
-    }, [apikey])
+    }, [])
     return (
         <>
-        <input placeholder="Insert Apikey..." value={apikey} onChange={(event) => setApikey(event.target.value)}></input>
-        <button onClick={()=> localStorage.setItem("giphy_apikey", apikey)}>{apikey !== "" ? "Change" : "Add"} Apikey</button>
+        <input placeholder="Insert Apikey..." value={Apikey} onChange={(event) => setApikey(event.target.value)}></input>
+        {/* <button onClick={()=> localStorage.setItem("giphy_apikey", apikey)}>{apikey !== "" ? "Change" : "Add"} Apikey</button> */}
         </>
     )
 }
