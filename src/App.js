@@ -2,8 +2,7 @@ import './App.css';
 import React, { useState } from 'react';
 import  ListOfGifs from './components/ListOfGifs';
 import ApikeyManager from './components/ApikeyManager';
-import { Link, Route } from "wouter";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link, Route } from "react-router-dom";
 import GifDetailPage from './pages/GifDetailPage';
 
 function App() {
