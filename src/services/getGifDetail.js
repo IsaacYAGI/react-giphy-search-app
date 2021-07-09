@@ -1,8 +1,10 @@
 
 
-export async function GetGifById(id = ""){
+export async function GetGifById(id = "", Apikey){
     // const { Apikey } = useContext(ApikeyContext)
-    const Apikey = process.env.REACT_APP_APIKEY;
+    // const Apikey = process.env.REACT_APP_APIKEY;
+    console.log(Apikey);
+
     const apiURL = `https://api.giphy.com/v1/gifs/${id}?api_key=${Apikey}`;
     try {
         if (Apikey !== ""){
